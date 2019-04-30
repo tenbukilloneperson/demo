@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件对象Date</title>
+</head>
+<body>
+	<script>
+		console.log(Date())          //	Wed Mar 20 2019 13:36:35 GMT+0800 (中国标准时间)
+		console.log(new Date())		 //	Wed Mar 20 2019 13:36:35 GMT+0800 (中国标准时间)
+		console.log(+new Date())	 //	1553060274894
+		var date = new Date()
+		console.log(new Date().getTime())  // 当前时间到1970-01-01 至今的毫秒数
+
+		console.log(date.getFullYear())  // 年份
+		console.log(date.getMonth())	 // 月份
+		console.log(date.getDate())		 // 天数		
+		console.log(date.getDay())		 // 周
+		console.log(date.getMinutes())	 // 分钟
+		console.log(date.getSeconds())	 // 秒数
+		console.log(date.getMilliseconds())// 毫秒
+		/*
+			new Date() 和 Date()的区别    不传参数都是返回当前时间(Wed Mar 20 2019 13:36:35 GMT+0800 (中国标准时间))
+			获取当前时间到1970-01-01的毫秒的方法 
+				 +new Date()
+				 new Date().getTime()
+				 Date.now()
+			new Date() 可以传参
+		 */
+	</script>
+</body>
+</html>

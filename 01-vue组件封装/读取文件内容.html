@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>HTML5读取文件内容</title>
+    <style>
+        #text {
+            width: 500px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+	<input type="file" id="file"/>
+	<div>
+        <progress value="0"></progress>
+    </div>
+    <span id="text"></span>
+	<button id="btn" >中断</button>
+</body>
+<script>
+    var file = document.querySelector('#file')
+    var btnAbort = document.querySelector('#btn')
+    const fileReader  = new FileReader()
+
+    // 中断扫描
+    btnAbort.onclick = function () {
+        fileReader.abort()
+    }
+
+    file.onchange = function () { 
+        var fileContent = file.files[0]
+        fileReader.readAsDataURL(fileContent)        // 读取为Base64类型
+        // fileReader.readAsBinaryString(fileContent)   // 读取为为二进制数据
+        // fileReader.readAsArrayBuffer(fileContent)    // 读取为ArrayBuffer
+        // fileReader.readAsText(fileContent,'UTF-8')   // 读取为指定编码格式的文本
+
+        // 读取成功时的回调
+        fileReader.onload = function() {
+            var urlData = this.result;
+            document.querySelector('#text').innerText = urlData
+            console.log(urlData);
+        }
+        // 中断读取时
+        fileReader.onabort = function () {}
+
+        // 读取错误时
+        FileReader.onerror = function () {}
+
+        // 读取开始时
+        FileReader.onloadstart = function () {}
+
+        // 读取过程中(处理progress)
+        FileReader.onprogress = function () {}
+
+        // 读取完成时
+        FileReader.onloadend = function () {}
+    }
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用clipboard.js完成复制功能</title>
+	<script src="assets/clipboard/dist/clipboard.js"></script>
+</head>
+<body>
+	<h1 id="title">这里是被复制的内容</h1>
+	<input id="btn" type="button" value="复制" data-clipboard-target="#title">
+	<script>
+		/*
+		 基本用法：		
+		 初始化 传入复制按钮的
+		 var clipboard = new ClipboardJS(document.querySelector('#btn'))
+		 */
+		/*
+			data-clipboard-target  要复制的文本的DOMd的选择器
+			data-clipboard-text    要复制的文本
+			event: 事件对象
+
+			使用: 复制按钮绑定data-clipboard-target, 然后实例化clipboard, 随后监听success和error事件
+		 */
+
+		document.querySelector('#btn').onclick = function () {
+			var clipboard = new ClipboardJS('#btn')
+			// 监听复制成功事件
+			clipboard.on('success', event => {
+				console.log(event)
+				// 必须销毁实例  不然会出现次初始化
+				clipboard.destroy()
+			})
+			// 监听复制失败事件
+			clipboard.on('error', event => {
+				console.log(event)
+				clipboard.destroy()
+			})
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用execCommand完成复制功能</title>
+</head>
+<body>
+	<h1 class="title">这是h1标题</h1>
+	<input type="button" value="复制" id="btn">
+	<script>
+		// 思路: 动态创建一个input添加到body中，value值为要复制的文本。 然后调用浏览器的document.execCommand('Copy')
+		// 如下Demo做了封装,使用方法: domSelector(要复制的文本的DOM选择器,支持所有选择器)
+		function copyText(domSelector) {
+			let ipt = document.createElement('input')
+			document.body.appendChild(ipt)
+			ipt.value = document.querySelector(domSelector).innerText
+			ipt.select()
+			document.execCommand('Copy')
+			alert('复制成功')
+			ipt.remove()
+		}
+		document.querySelector('#btn').onclick = function () {
+			copyText('.title')
+		}
+
+		var data='<b style="font-size:32px;color:red;">次碳酸钴</b>';   
+		var blob=new Blob([data],{"type":"text/html"});   
+		console.log(blob); 
+
+	</script>
+</body>
+</html>
