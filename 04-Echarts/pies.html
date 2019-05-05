@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圆饼图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #ccc;
+            position: absolute;
+            left: 20px;
+            top: 26px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script src="./node_modules/echarts/dist/echarts.js"></script>
+    <div class="container">
+        <div id="echarts" style="width: 652px;; height: 460px;"></div>
+        <div class="icon"></div>
+    </div>
+    <script>
+         var myEcharts = echarts.init(document.querySelector('#echarts'))
+         var options = {
+             title: { // 标题
+                 text: '存证类型占比',
+                 textStyle: {
+                     color: '#373737'
+                 },
+                 padding: [28,0,0,48]
+             },
+             legend: { // 图例
+                top: 'middle',
+                left: 'left',
+                orient: "vertical", 
+                data: [
+                    {
+                        name: '开户协议书',
+                        icon: 'circle'
+                    },
+                    {
+                        name: '工作底稿',
+                        icon: 'circle'
+                    },
+                    {
+                        name: '自有产品',
+                        icon: 'circle'
+                    },
+                    {
+                        name: '外包产品',
+                        icon: 'circle'
+                    },
+                    {
+                        name: '其他',
+                        icon: 'circle'
+                    }
+                ],
+                itemGap: 20, // 图例之间的距离
+                itemWidth: 20,
+                itemHeight: 20,
+            },
+             series: {
+                    type: 'pie',
+                    labelLine: {
+                        length: 30,
+                        length2: 40,
+                        lineStyle: {
+                            color: '#999'
+                        }
+                    },
+                    label: { // 控制指示线的显示与隐藏
+                        show: true,
+                        color: '#999999'
+                    },
+                    data: [
+                        {
+                            value: 20,
+                            name: '开户协议书',
+                            itemStyle: {
+                                color: '#0367A6'
+                            }
+                        },
+                        {
+                            value: 30,
+                            name: '工作底稿',
+                            itemStyle: {
+                                color: '#F29422'
+                            }
+                        },
+                        {
+                            value: 50,
+                            name: '自有产品',
+                            itemStyle: {
+                                color: '#F2CB05'
+                            }
+                        },
+                        {
+                            value: 50,
+                            name: '外包产品',
+                            itemStyle: {
+                                color: '#D93D4A'
+                            }
+                        },
+                        {
+                            value: 50,
+                            name: '其他',
+                            itemStyle: {
+                                color: '#0DB3D9'
+                            }
+                        },
+                    ]
+                }
+         }
+         myEcharts.setOption(options)
+    </script>
+</body>
+</html>
