@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "echarts": "^4.2.1",
-    "echarts-liquidfill": "^2.0.4"
+    "echarts-liquidfill": "^2.0.4",
+    "element-ui": "^2.8.2",
+    "vue": "^2.6.10"
   }
 }

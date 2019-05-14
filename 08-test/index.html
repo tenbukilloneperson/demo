@@ -1,0 +1,39 @@
+<html>
+<head>
+    <style>
+        label { /*flex布局让子元素水平垂直居中*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        input[type=checkbox],input[type=radio] {
+            -webkit-appearance: none;
+            appearance: none;
+            outline: none;
+            width: 24px;
+            height: 24;
+            cursor: pointer;
+            vertical-align: center;
+            background: #fff;
+            border: 2px solid #ccc;
+        }
+
+        input[type=checkbox]:checked::after {
+            content: "\2714";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 700px;
+            color: #ccc;
+        }
+
+    </style>
+</head>
+
+<body>
+<label><input type="checkbox" />1111</label>
+</body>
+
+</html>

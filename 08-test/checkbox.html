@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+</head>
+<body>
+		<input type="checkbox"> 全选
+	<div id="app">
+			<input name="aaa" type="checkbox" value="1" v-model="checkboxArr"> javascript
+			<input name="aaa" type="checkbox" value="2" v-model="checkboxArr"> java
+			<input name="aaa" type="checkbox" value="3" v-model="checkboxArr"> pathy
+			<input name="aaa" type="checkbox" value="4" v-model="checkboxArr"> php
+		<p>{{ checkboxArr }}</p>
+	</div>
+	<script>
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				checkboxArr: []
+			}
+		})
+	</script>
+</body>
+</html>

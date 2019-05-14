@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			padding:0 20px;
+		}
+		.wrapper {
+			width: 100%;
+			height: 800px;
+		}
+		.flex-center {
+			display: flex;
+			justify-content: flex-start;
+		}
+		.thead {
+			padding: 0 20px;
+			height: 61px;
+			background: #fff;
+			display: flex;
+			align-items: center;
+		}
+		.thead p {
+			text-align: left;
+			width: 16.6%;
+		}
+		.tbody {
+			height:140px;
+			background:rgba(255,255,255,1);
+			border:1px solid rgba(221, 221, 221, 1);
+			border-radius:8px;
+			margin-bottom: 20px;
+		}
+		.tbody-summary {
+			padding: 0 20px;
+			height:40px;
+			background:rgba(218,220,232,1);
+			border:1px solid rgba(221, 221, 221, 1);
+			border-radius:8px;
+		}
+		.tbody-summary p {
+			margin-right: 20px;
+			height: 40px;
+			line-height: 40px;
+		}
+		.tbody-content {
+			padding: 0 20px;
+			height: 100px;
+			line-height: 100px;
+		}
+		.tbody-content p{
+			width: 16.6%;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="thead flex-center">
+			<p>业务流水号</p>
+			<p>公证提取码</p>
+			<p>存证类型</p>
+			<p>是否有源文件</p>
+			<p>联系信息</p>
+			<p>状态</p>
+		</div>
+		<div class="tbody">
+			<div class="tbody-summary flex-center">
+				<p>申请出证时间: 2018.09.19 20:00</p>
+				<p>存证号：2948932840kdjlsjlgfdgf</p>
+			</div>
+			<div class="tbody-content flex-center">
+				<p>1292749372957</p>
+				<p>shuxinlian123</p>
+				<p>开户协议书</p>
+				<p>是</p>
+				<p>李子贤 3255630025</p>
+				<p>已出证</p>
+			</div>
+		</div>		
+	</div>
+</body>
+</html>

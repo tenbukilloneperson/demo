@@ -25,8 +25,24 @@
 
 		var data='<b style="font-size:32px;color:red;">次碳酸钴</b>';   
 		var blob=new Blob([data],{"type":"text/html"});   
-		console.log(blob); 
+		console.log(blob);
 
+		 
+		  //   // 表格中的复制功能
+    // copy(data) {
+    //   // 1. 使用浏览器的exeCommand()复制功能
+    //   let url = data;
+    //   let oInput = document.createElement("input");
+    //   oInput.value = url;
+    //   document.body.appendChild(oInput);
+    //   oInput.select(); // 选择对象;
+    //   document.execCommand("Copy"); // 执行浏览器复制命令
+    //   this.$message({
+    //     message: "已成功复制到剪切板",
+    //     type: "success"
+    //   });
+    //   oInput.remove();
+    // },
 	</script>
 </body>
 </html>
